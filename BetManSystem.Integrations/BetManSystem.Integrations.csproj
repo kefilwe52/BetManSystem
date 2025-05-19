@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BetManSystem.Application\BetManSystem.Application.csproj" />
+    <ProjectReference Include="..\BetManSystem.Common\BetManSystem.Common.csproj" />
+  </ItemGroup>
+
+</Project>

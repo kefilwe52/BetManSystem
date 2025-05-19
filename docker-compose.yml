@@ -1,0 +1,33 @@
+﻿version: '3.9'
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Kefilwe@Ggg123"
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql_data:/var/opt/mssql
+
+  api:
+    build:
+      context: .
+      dockerfile: BetManSystem.Api/Dockerfile
+    depends_on:
+      - db        
+    ports:
+      - "5000:5000"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "http://+:5000"
+      ConnectionStrings__DefaultConnection: >
+        Server=db,1433;
+        Database=BetManSystemDb;
+        User Id=sa;
+        Password=Kefilwe@Ggg123;
+        TrustServerCertificate=True;
+
+volumes:
+  mssql_data:

@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "betmansystem.api": "StartDebugging"
+      },
+      "environmentVariables": {
+        "ConnectionStrings__DefaultConnection": "Server=.;Database=BetManSystemDb;User Id=Kefilwe;Password=K@gmail22.com;TrustServerCertificate=True;"
+      }
+    }
+  }
+}
